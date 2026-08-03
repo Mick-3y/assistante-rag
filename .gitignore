@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Secrets — la clé API ne va JAMAIS dans le repo
+.env
+*.key
+
+# Échafaudage d'apprentissage (aides perso, hors portfolio)
+_corrige_NE_PAS_OUVRIR_avant_la_fin.py
+_reference_NE_PAS_OUVRIR/
+_ETAT_SESSION_reprendre_ici.md
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
