@@ -61,7 +61,9 @@ vectoriel**, des **evals de retrieval**, et le **coût par requête** affiché.
    ```powershell
    $env:ANTHROPIC_API_KEY = "sk-ant-..."
    ```
-3. **Lancer :** `python assistant_perso/assistante.py`
+3. **Lancer :** `python assistante.py <dossier_a_indexer>`
+   - `<dossier_a_indexer>` : chemin vers le dossier contenant tes documents (`.txt`,
+     `.md`, `.docx`, `.pdf`), parcouru récursivement.
    - Au premier lancement, le modèle E5 se télécharge (~470 Mo).
    - Pose tes questions, `quit` pour sortir.
 

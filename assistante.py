@@ -1,15 +1,19 @@
+import argparse
 import docx
 import numpy as np
 from pathlib import Path
 from pypdf import PdfReader
-from sentence_transformers import SentenceTransformer 
+from sentence_transformers import SentenceTransformer
 from anthropic import Anthropic
 
 extensions = {".txt", ".md", ".docx", ".pdf"}
 excluded_dirs = {"venv", "__pycache__", ".git", "node_modules", "build", "dist"}
 modele = SentenceTransformer('intfloat/multilingual-e5-small')
 
-DOSSIER_DOCS = Path(r"C:\Users\caam\Documents\Perso\Apprentissage-IA")
+parser = argparse.ArgumentParser(description="Assistant RAG sur des documents personnels.")
+parser.add_argument("dossier_docs", type=Path, help="Dossier à indexer (.txt, .md, .docx, .pdf)")
+args = parser.parse_args()
+DOSSIER_DOCS = args.dossier_docs
 
 prix_input = 1
 prix_output = 5
