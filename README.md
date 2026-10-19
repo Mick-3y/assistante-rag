@@ -1,13 +1,8 @@
-# Assistante RAG — sur mes propres documents
+# Assistante RAG
 
 Un assistant qui répond à des questions en s'appuyant sur mes documents
 personnels (`.md`, `.txt`, `.pdf`, `.docx`), avec une **vraie couche de retrieval
 vectoriel**, des **evals de retrieval**, et le **coût par requête** affiché.
-
-> **Note d'honnêteté d'entrée de jeu :** sur un corpus de cette taille, « tout
-> charger dans le contexte » suffirait. Les embeddings et la recherche vectorielle
-> sont ajoutés **pour démontrer la compétence**, pas parce que le corpus l'exigeait.
-> C'est un choix assumé, pas une nécessité technique.
 
 ---
 
@@ -73,15 +68,6 @@ vectoriel**, des **evals de retrieval**, et le **coût par requête** affiché.
 
 ---
 
-## Évaluation du retrieval
-
-On évalue le **retrieval seul** (le bon chunk est-il remonté ?), indépendamment
-de la génération : la qualité de réponse est **plafonnée** par ce que la recherche
-fournit. Deux métriques sur un jeu de 6 questions à vérité terrain écrite à la main :
-
-- **Recall@5** — le bon chunk est-il *présent* dans le top-5 ? (indulgent sur l'ordre)
-- **MRR@5** — *Mean Reciprocal Rank*, `1/rang` du premier bon chunk, moyenné.
-  Récompense de le classer **haut** (rang 1 → 1.0, rang 4 → 0.25).
 
 ### Résultat clé : l'effet des préfixes E5
 
